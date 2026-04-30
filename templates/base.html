@@ -36,10 +36,15 @@
     </div>
 
     <!-- HØYRE SIDE: Logg inn, Registrer deg, Språk -->
-    <div class="d-flex gap-3 align-items-center">
+<div class="d-flex gap-3 align-items-center">
 
+    {% if session.get("user_id") %}
+        <a href="/dashboard" class="btn login-btn">Profil</a>
+        <a href="/logout" class="btn register-btn">Logg ut</a>
+    {% else %}
         <a href="/login" class="btn login-btn">Logg inn</a>
         <a href="/register" class="btn register-btn">Registrer deg</a>
+    {% endif %}
 
         <div class="dropdown">
             <button class="btn lang-dropdown-btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
