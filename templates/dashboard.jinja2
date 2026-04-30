@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard – Mono</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+
+<div class="db-page">
+
+    <!-- HEADER -->
+    <div class="db-header">
+        <div class="db-header-left">
+            <a href="/" class="db-logo-link">
+                <img src="/static/img/monologo.png" alt="Logo" class="db-logo-img">
+            </a>
+
+
+        </div>
+        <div class="db-header-right">
+            {% if role == "admin" %}
+                <a href="/admin" class="db-nav-btn db-nav-admin">⚙️ Admin</a>
+            {% endif %}
+            <a href="/oppgaver/trinn/8" class="db-nav-btn">📚 Oppgaver</a>
+            <a href="/logout" class="db-nav-btn db-nav-logout">Logg ut</a>
+        </div>
+    </div>
+
+    <!-- VELKOMST -->
+    <div class="db-hero">
+        <div class="db-hero-text">
+            <h1>Hei, {{ username }}! 👋</h1>
+            <p>Her er din fremgang så langt. Fortsett der du slapp!</p>
+        </div>
+        <a href="/oppgaver/trinn/8" class="db-start-btn">▶ Fortsett å øve</a>
+    </div>
+
+    <!-- STATS -->
+    <div class="db-stats">
+        <div class="db-stat-card">
+            <div class="db-stat-icon">🏆</div>
+            <div class="db-stat-number">{{ total }}</div>
+            <div class="db-stat-label">Totalt løste</div>
+        </div>
+        <div class="db-stat-card">
+            <div class="db-stat-icon">🟢</div>
+            <div class="db-stat-number">{{ nivaa1 }}<span>/30</span></div>
+            <div class="db-stat-label">Nivå 1</div>
+            <div class="db-progress-bar">
+                <div class="db-progress-fill" style="width: {{ (nivaa1 / 30 * 100)|int }}%; background: #28c76f;"></div>
+            </div>
+        </div>
+        <div class="db-stat-card">
+            <div class="db-stat-icon">🟡</div>
+            <div class="db-stat-number">{{ nivaa2 }}<span>/30</span></div>
+            <div class="db-stat-label">Nivå 2</div>
+            <div class="db-progress-bar">
+                <div class="db-progress-fill" style="width: {{ (nivaa2 / 30 * 100)|int }}%; background: #ff9f43;"></div>
+            </div>
+        </div>
+        <div class="db-stat-card">
+            <div class="db-stat-icon">🔴</div>
+            <div class="db-stat-number">{{ nivaa3 }}<span>/30</span></div>
+            <div class="db-stat-label">Nivå 3</div>
+            <div class="db-progress-bar">
+                <div class="db-progress-fill" style="width: {{ (nivaa3 / 30 * 100)|int }}%; background: #ea5455;"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

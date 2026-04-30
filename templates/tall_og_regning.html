@@ -1,0 +1,51 @@
+{% extends "oppgaver_layout.html" %}
+
+{% block title %}Tall og regning{% endblock %}
+
+{% block task_content %}
+
+<h1>Tall og regning</h1>
+<p>Velg et undertema:</p>
+
+<div class="subtheme-list">
+
+    <a href="/oppgaver/tall/heletall" class="subtheme-item">Hele tall →</a>
+    <a href="/oppgaver/tall/desimaltall" class="subtheme-item">Desimaltall →</a>
+    <a href="/oppgaver/tall/broker" class="subtheme-item">Brøker →</a>
+    <a href="/oppgaver/tall/prosent" class="subtheme-item">Prosent →</a>
+    <a href="/oppgaver/algebra/regnerekkefolge" class="subtheme-item">Regnerekkefølge →</a>
+    <a href="/oppgaver/tall/overslag" class="subtheme-item">Overslag og hoderegning →</a>
+    <a href="/oppgaver/tall/negative" class="subtheme-item">Negative tall →</a>
+    <a href="/oppgaver/tall/potenser" class="subtheme-item">Potenser (enkle) →</a>
+    <a href="/oppgaver/tall/forhold" class="subtheme-item">Forhold og brøk–desimal–prosent‑sammenheng →</a>
+
+</div>
+
+<style>
+.subtheme-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.subtheme-item {
+    display: block;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: 0.2s ease;
+}
+
+.subtheme-item:hover {
+    background: rgba(13,110,253,0.15);
+    transform: translateX(4px);
+}
+</style>
+
+{% endblock %}

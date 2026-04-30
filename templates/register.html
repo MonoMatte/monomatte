@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrer deg</title>
+    <link rel="stylesheet" href="/static/css/auth.css">
+</head>
+
+<body class="auth-body">
+
+<div class="auth-card">
+    <h2 class="auth-title">Opprett konto</h2>
+
+    {% if error %}
+    <div class="auth-error">
+        {{ error }}
+    </div>
+    {% endif %}
+
+    <form method="POST" class="auth-form">
+        <input type="text" name="username" placeholder="Brukernavn" class="auth-input" required>
+        <input type="password" name="password" placeholder="Passord" class="auth-input" required>
+
+        <button class="auth-btn register-btn">Registrer deg</button>
+    </form>
+
+    <p class="auth-switch">
+        Har du allerede konto?
+        <a href="/login">Logg inn</a>
+    </p>
+    
+</div>
+
+</body>
+</html>

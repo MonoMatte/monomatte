@@ -1,0 +1,270 @@
+{% extends "base.html" %}
+
+{% block title %}
+Temaer
+{% endblock %}
+
+{% block body %}
+
+<div class="container my-5">
+
+  <!-- HERO -->
+  <section class="topic-hero-advanced mb-5">
+    <h1 class="topic-hero-advanced__title">Temaer i matematikk</h1>
+    <p class="topic-hero-advanced__subtitle">
+      Klikk på et tema for å se forklaringer, eksempler og viktige formler.
+    </p>
+  </section>
+
+  <div class="row g-4">
+
+    <!-- VENSTRE SIDE -->
+    <div class="col-lg-9">
+
+      <!-- ===================== -->
+      <!--        ALGEBRA        -->
+      <!-- ===================== -->
+      <section class="glass-module">
+        <div class="module-header module-algebra">
+          <h2>Algebra</h2>
+          <span class="module-label">Grunnleggende</span>
+        </div>
+
+        <div class="module-body">
+
+          <details class="module-details">
+            <summary>Regnerekkefølge</summary>
+            <p><b>Forklaring:</b> Først parentes → multiplikasjon/divisjon → addisjon/subtraksjon.</p>
+            <p><b>Eksempel:</b> 2 + 3 · 4 = 14</p>
+          </details>
+
+          <details class="module-details">
+            <summary>Algebraiske uttrykk</summary>
+            <p><b>Forklaring:</b> Uttrykk med tall og bokstaver.</p>
+            <p><b>Eksempel:</b> 3x + 5</p>
+          </details>
+
+          <details class="module-details">
+            <summary>Enkle likninger</summary>
+            <p><b>Forklaring:</b> Likninger har et likhetstegn.</p>
+            <p><b>Eksempel:</b> x + 3 = 7 → x = 4</p>
+          </details>
+
+        </div>
+      </section>
+
+      <!-- ===================== -->
+      <!--       GEOMETRI        -->
+      <!-- ===================== -->
+      <section class="glass-module">
+        <div class="module-header module-geometry">
+          <h2>Geometri</h2>
+          <span class="module-label">Figurer og formler</span>
+        </div>
+
+        <div class="module-body">
+
+          <details class="module-details">
+            <summary>Areal</summary>
+            <p><b>Forklaring:</b> Hvor stor en flate er.</p>
+            <p><b>Eksempel:</b> Rektangel: A = l · b</p>
+            <p>Trekant: A = (g · h) / 2</p>
+          </details>
+
+          <details class="module-details">
+            <summary>Omkrets</summary>
+            <p><b>Forklaring:</b> Lengden rundt figuren.</p>
+            <p><b>Eksempel:</b> Kvadrat: O = 4 · s</p>
+          </details>
+
+          <details class="module-details">
+            <summary>Pytagoras</summary>
+            <p><b>Forklaring:</b> Gjelder i rettvinklede trekanter.</p>
+            <p><b>Formel:</b> a² + b² = c²</p>
+          </details>
+
+        </div>
+      </section>
+
+      <!-- ===================== -->
+      <!--         VOLUM         -->
+      <!-- ===================== -->
+      <section class="glass-module">
+        <div class="module-header module-volume">
+          <h2>Volum og overflate</h2>
+          <span class="module-label">Romgeometri</span>
+        </div>
+
+        <div class="module-body">
+
+          <details class="module-details">
+            <summary>Volum</summary>
+            <p><b>Forklaring:</b> Hvor mye plass noe tar.</p>
+            <ul>
+              <li>Kube: V = a³</li>
+              <li>Prisme: V = G · h</li>
+              <li>Sylinder: V = πr²h</li>
+              <li>Pyramide: V = (1/3)Gh</li>
+              <li>Kjegle: V = (1/3)πr²h</li>
+              <li>Kule: V = (4/3)πr³</li>
+            </ul>
+          </details>
+
+          <details class="module-details">
+            <summary>Overflate</summary>
+            <p><b>Forklaring:</b> Summen av alle yttersidene.</p>
+          </details>
+
+          <details class="module-details">
+            <summary>Måleenhet</summary>
+            <p><b>Forklaring:</b> m³ for volum, m² for areal.</p>
+          </details>
+
+        </div>
+      </section>
+
+      <!-- ===================== -->
+      <!--   BRØK / PROSENT      -->
+      <!-- ===================== -->
+      <section class="glass-module">
+        <div class="module-header module-fraction">
+          <h2>Brøk, desimaltall og prosent</h2>
+          <span class="module-label">Tallforståelse</span>
+        </div>
+
+        <div class="module-body">
+
+          <details class="module-details">
+            <summary>Brøk</summary>
+            <p>En del av en hel.</p>
+          </details>
+
+          <details class="module-details">
+            <summary>Prosent</summary>
+            <p>Betyr "per hundre".</p>
+          </details>
+
+        </div>
+      </section>
+
+      <!-- ===================== -->
+      <!--      FUNKSJONER       -->
+      <!-- ===================== -->
+      <section class="glass-module">
+        <div class="module-header module-functions">
+          <h2>Funksjoner</h2>
+          <span class="module-label">Sammenhenger</span>
+        </div>
+
+        <div class="module-body">
+
+          <details class="module-details">
+            <summary>Lineære funksjoner</summary>
+            <p>y = ax + b</p>
+          </details>
+
+          <details class="module-details">
+            <summary>Andregradsfunksjoner</summary>
+            <p>f(x) = ax² + bx + c</p>
+          </details>
+
+          <details class="module-details">
+            <summary>Konstant funksjon</summary>
+            <p>f(x) = c</p>
+          </details>
+
+          <details class="module-details">
+            <summary>Proporsjonal funksjon</summary>
+            <p>f(x) = ax</p>
+          </details>
+
+          <details class="module-details">
+            <summary>Omvendt proporsjonal funksjon</summary>
+            <p>f(x) = a / x</p>
+          </details>
+
+        </div>
+      </section>
+
+      <!-- ===================== -->
+      <!--      STATISTIKK       -->
+      <!-- ===================== -->
+      <section class="glass-module">
+        <div class="module-header module-stats">
+          <h2>Statistikk</h2>
+          <span class="module-label">Data</span>
+        </div>
+
+        <div class="module-body">
+
+          <details class="module-details">
+            <summary>Gjennomsnitt</summary>
+            <p>Summen delt på antall.</p>
+          </details>
+
+          <details class="module-details">
+            <summary>Median</summary>
+            <p>Midterste tall.</p>
+          </details>
+
+          <details class="module-details">
+            <summary>Typetall</summary>
+            <p>Det tallet som forekommer oftest.</p>
+          </details>
+
+        </div>
+      </section>
+
+      <!-- ===================== -->
+      <!--   SANNSYNLIGHET       -->
+      <!-- ===================== -->
+      <section class="glass-module">
+        <div class="module-header module-probability">
+          <h2>Sannsynlighet og kombinatorikk</h2>
+          <span class="module-label">Usikkerhet</span>
+        </div>
+
+        <div class="module-body">
+
+          <details class="module-details">
+            <summary>Sannsynlighet</summary>
+            <p>Hvor stor sjanse noe har for å skje.</p>
+          </details>
+
+          <details class="module-details">
+            <summary>Ordnet utvalg med tilbakelegging</summary>
+            <p>Rekkefølge teller, og du kan velge samme flere ganger.</p>
+          </details>
+
+          <details class="module-details">
+            <summary>Ordnet utvalg uten tilbakelegging</summary>
+            <p>Rekkefølge teller, men du kan ikke velge samme igjen.</p>
+          </details>
+
+          <details class="module-details">
+            <summary>Uordnet utvalg uten tilbakelegging</summary>
+            <p>Rekkefølge teller ikke, og du kan ikke velge samme igjen.</p>
+          </details>
+
+        </div>
+      </section>
+
+    </div>
+
+    <!-- HØYRE SIDE -->
+<div class="col-lg-3">
+  <aside class="tools-panel-advanced">
+    <div class="tools-card-advanced">
+      <h3 class="tools-title">Verktøy</h3>
+      <p class="tools-text">Bruk kalkulatoren mens du jobber.</p>
+      <iframe 
+        src="https://www.desmos.com/scientific"
+        width="100%"
+        height="320"
+        style="border:0; border-radius: 18px;">
+      </iframe>
+    </div>
+  </aside>
+</div>
+
+{% endblock %}
