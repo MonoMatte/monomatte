@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %} Fullført {% endblock %}
+
+{% block body %}
+
+<div class="container my-5">
+
+    <section class="task-hero mb-4">
+        <div class="task-hero-icon">🎉</div>
+        <h1 class="task-hero-title">{{ tittel }} – Fullført!</h1>
+        <p class="task-hero-subtitle">{{ melding }}</p>
+    </section>
+
+    <a href="/oppgaver/algebra" class="btn btn-primary">Tilbake til oppgaver</a>
+
+</div>
+
+{% endblock %}

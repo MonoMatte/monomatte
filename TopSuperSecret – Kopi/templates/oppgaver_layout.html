@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Oppgaver{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+
+<body>
+
+<div class="oppgaver-container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="task-sidebar">
+
+        {% if oppgaver %}
+            <h2>Oppgaver</h2>
+            {% for item in oppgaver %}
+                {% if item is mapping %}
+                    {# Nivå 2 og 3: item er en dict med nummer, id, link #}
+                    <a href="{{ item.link }}"
+                     class="sidebar-link
+                    {% if item.nummer == oppgave_nummer %} active-task {% endif %}
+                    {% if riktige_oppgaver and item.id in riktige_oppgaver %} sidebar-correct {% endif %}">
+                    Oppgave {{ item.nummer }}
+                    </a>
+                {% else %}
+                    {# Nivå 1: item er et tall #}
+                    <a href="?n={{ item }}"
+                     class="sidebar-link
+                    {% if item == oppgave_nummer %} active-task {% endif %}
+                    {% if riktige_oppgaver and item in riktige_oppgaver %} sidebar-correct {% endif %}">
+                    Oppgave {{ item }}
+                    </a>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <h2>Temaer</h2>
+            {% if undertemaer %}
+                {% for item in undertemaer %}
+                    <a href="{{ item.link }}" class="sidebar-link">{{ item.navn }}</a>
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="task-content">
+        {% block task_content %}{% endblock %}
+    </div>
+
+</div>
+
+<!--  SCROLL-POSISJON FIX  -->
+<script>
+window.addEventListener("load", () => {
+    const sidebar = document.getElementById("task-sidebar");
+    if (!sidebar) return;
+
+    // Finn hvilket nivå vi er på (nivaa1, nivaa2, nivaa3)
+    let level = null;
+
+    if (window.location.pathname.includes("nivaa1")) level = "nivaa1";
+    if (window.location.pathname.includes("nivaa2")) level = "nivaa2";
+    if (window.location.pathname.includes("nivaa3")) level = "nivaa3";
+
+    // Hvis vi ikke er på et nivå med oppgaveliste → ikke gjør noe
+    if (!level) return;
+
+    const key = "taskSidebarScroll_" + level;
+
+    // Gjenopprett scroll-posisjon
+    const savedPos = localStorage.getItem(key);
+    if (savedPos !== null) {
+        sidebar.scrollTop = parseInt(savedPos, 10);
+    }
+
+    // Lagre scroll-posisjon når brukeren scroller
+    sidebar.addEventListener("scroll", () => {
+        localStorage.setItem(key, sidebar.scrollTop);
+    });
+});
+</script>
+
+</body>
+</html>

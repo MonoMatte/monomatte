@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin – Mono</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+
+<div class="db-page">
+
+    <!-- HEADER -->
+    <div class="db-header">
+        <span class="db-logo"> Mono – Admin</span>
+        <div class="db-header-right">
+            <a href="/dashboard" class="db-nav-btn">← Dashboard</a>
+            <a href="/logout" class="db-nav-btn db-nav-logout">Logg ut</a>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="db-hero" style="margin-bottom: 35px;">
+        <div class="db-hero-text">
+            <h1>⚙️ Admin-panel</h1>
+            <p>Administrer brukere og se statistikk for hele plattformen.</p>
+        </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="db-stats" style="grid-template-columns: repeat(2, 1fr); margin-bottom: 35px;">
+        <div class="db-stat-card">
+            <div class="db-stat-icon">👥</div>
+            <div class="db-stat-number">{{ totalt_brukere }}</div>
+            <div class="db-stat-label">Totalt antall brukere</div>
+        </div>
+        <div class="db-stat-card">
+            <div class="db-stat-icon">✅</div>
+            <div class="db-stat-number">{{ totalt_løste }}</div>
+            <div class="db-stat-label">Totalt løste oppgaver</div>
+        </div>
+    </div>
+
+    <!-- BRUKERTABELL -->
+    <div class="admin-table-card">
+        <h2 class="admin-table-title">👤 Brukere</h2>
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Brukernavn</th>
+                    <th>Rolle</th>
+                    <th>Løste oppgaver</th>
+                    <th>Endre rolle</th>
+                    <th>Slett</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for u in users %}
+                <tr class="{{ 'admin-row-self' if u.id == current_user_id else '' }}">
+                    <td>#{{ u.id }}</td>
+                    <td>
+                        <strong>{{ u.username }}</strong>
+                        {% if u.id == current_user_id %}
+                            <span class="admin-badge-you">deg</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <span class="admin-badge {{ 'admin-badge-admin' if u.role == 'admin' else 'admin-badge-user' }}">
+                            {{ u.role }}
+                        </span>
+                    </td>
+                    <td>{{ u.løste }}</td>
+                    <td>
+                        {% if u.id != current_user_id %}
+                        <form method="POST" action="/admin/rolle/{{ u.id }}">
+                            <select name="rolle" class="admin-select" onchange="this.form.submit()">
+                                <option value="user" {{ 'selected' if u.role == 'user' }}>user</option>
+                                <option value="admin" {{ 'selected' if u.role == 'admin' }}>admin</option>
+                            </select>
+                        </form>
+                        {% else %}
+                            <span style="color:#aaa; font-size:0.85rem;">—</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if u.id != current_user_id %}
+                        <form method="POST" action="/admin/slett/{{ u.id }}"
+                              onsubmit="return confirm('Sikker på at du vil slette {{ u.username }}?')">
+                            <button type="submit" class="admin-delete-btn">🗑 Slett</button>
+                        </form>
+                        {% else %}
+                            <span style="color:#aaa; font-size:0.85rem;">—</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>

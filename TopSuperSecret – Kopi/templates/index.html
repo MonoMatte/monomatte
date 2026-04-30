@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ _("Hjem") }}
+{% endblock %}
+
+{% block body %}
+
+<!-- HERO -->
+<section class="home-hero text-center mb-5">
+    <h1 class="home-title">{{ _("Velkommen til Matteplattformen") }}</h1>
+    <p class="home-subtitle">{{ _("Moderne læring for elever og lærere") }}</p>
+</section>
+
+<!-- FEATURE-SEKSJON -->
+<div class="container my-5">
+    <div class="row g-5 justify-content-center">
+
+        <!-- OMVENDT UNDERVISNING -->
+        <div class="col-12 col-md-4">
+            <div class="feature-text-left">
+
+                <div class="feature-icon-text">
+                    <!-- SVG IKON -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="1 4 1 10 7 10"></polyline>
+                        <polyline points="23 20 23 14 17 14"></polyline>
+                        <path d="M3.51 9A9 9 0 0 1 9 3.51 9 9 0 0 1 20.49 7"></path>
+                        <path d="M20.49 15A9 9 0 0 1 15 20.49 9 9 0 0 1 3.51 17"></path>
+                    </svg>
+                </div>
+
+                <div class="handwrite-wrapper">
+                    <h3 class="handwrite-title">{{ _("Omvendt undervisning") }}</h3>
+                    <div class="handwrite-underline"></div>
+                </div>
+
+                <p class="feature-desc-text">
+                    {{ _("Frigjør verdifull tid i klasserommet og gir bedre læringsflyt.") }}
+                </p>
+            </div>
+        </div>
+
+        <!-- GODE LÆRINGSDATA -->
+        <div class="col-12 col-md-4">
+            <div class="feature-text-center">
+
+                <div class="feature-icon-text">
+                    <!-- SVG IKON -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="4" y1="19" x2="4" y2="10"></line>
+                        <line x1="10" y1="19" x2="10" y2="5"></line>
+                        <line x1="16" y1="19" x2="16" y2="12"></line>
+                        <line x1="2" y1="19" x2="20" y2="19"></line>
+                    </svg>
+                </div>
+
+                <div class="handwrite-wrapper">
+                    <h3 class="handwrite-title">{{ _("Gode læringsdata") }}</h3>
+                    <div class="handwrite-underline"></div>
+                </div>
+
+                <p class="feature-desc-text">
+                    {{ _("Læreren får oversikt, eleven får tilpasset innhold.") }}
+                </p>
+            </div>
+        </div>
+
+        <!-- KOMPLETT LÆREVERK -->
+        <div class="col-12 col-md-4">
+            <div class="feature-text-right">
+
+                <div class="feature-icon-text">
+                    <!-- SVG IKON -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 4h11a2 2 0 0 1 2 2v13"></path>
+                        <path d="M5 4v15a2 2 0 0 0 2 2h11"></path>
+                        <line x1="9" y1="8" x2="15" y2="8"></line>
+                        <line x1="9" y1="12" x2="13" y2="12"></line>
+                    </svg>
+                </div>
+
+                <div class="handwrite-wrapper">
+                    <h3 class="handwrite-title">{{ _("Komplett læreverk") }}</h3>
+                    <div class="handwrite-underline"></div>
+                </div>
+
+                <p class="feature-desc-text">
+                    {{ _("Teori, oppgaver, prøver og aktiviteter samlet på ett sted.") }}
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- KNAPPER -->
+<div class="container mt-5">
+    <div class="row g-4 justify-content-center">
+
+        <!-- Temaer -->
+        <div class="col-12 col-md-4">
+            <a href="/about" class="home-card equal-card">
+                <div class="home-icon">📘</div>
+                <h3 class="home-card-title">{{ _("Temaer") }}</h3>
+                <p class="home-card-text">{{ _("Utforsk alle kapitler og fagområder") }}</p>
+            </a>
+        </div>
+
+        <!-- Oppgaver -->
+        <div class="col-12 col-md-4">
+            <a href="/oppgaver" class="home-card equal-card">
+                <div class="home-icon">🧮</div>
+                <h3 class="home-card-title">{{ _("Oppgaver") }}</h3>
+                <p class="home-card-text">{{ _("Øv på oppgaver og test ferdighetene dine") }}</p>
+            </a>
+        </div>
+
+        <!-- Kalkulator -->
+        <div class="col-12 col-md-4">
+            <a href="https://www.desmos.com/scientific" target="_blank" class="home-card equal-card">
+                <div class="home-icon">🤡</div>
+                <h3 class="home-card-title">{{ _("Kalkulator") }}</h3>
+                <p class="home-card-text">{{ _("Åpne avansert kalkulator i nytt vindu") }}</p>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer mt-5">
+    <div class="footer-content">
+        <p>{{ _("Laget av") }} <strong>Siamion Anatski</strong></p>
+        <p>{{ _("Bærum kommune") }}</p>
+        <p>{{ _("© 2026 MonoMatte. Alle rettigheter forbeholdt.") }}</p>
+    </div>
+</footer>
+
+{% endblock %}
